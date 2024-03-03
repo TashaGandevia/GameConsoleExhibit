@@ -1,4 +1,6 @@
 import * as __wonderlandengine_components from '@wonderlandengine/components';
 _registerEditor(__wonderlandengine_components);
-import * as _C__Users_TashaG_Documents_js_button_js from 'C:/Users/TashaG/Documents/js/button.js';
-_registerEditor(_C__Users_TashaG_Documents_js_button_js);
+import * as _C__Users_Tasha_OneDrive___Douglas_College_Desktop_Documents_GitHub_GameConsoleExhibit_js_button_js from 'C:/Users/Tasha/OneDrive - Douglas College/Desktop/Documents/GitHub/GameConsoleExhibit/js/button.js';
+_registerEditor(_C__Users_Tasha_OneDrive___Douglas_College_Desktop_Documents_GitHub_GameConsoleExhibit_js_button_js);
+import * as _C__Users_Tasha_OneDrive___Douglas_College_Desktop_Documents_GitHub_GameConsoleExhibit_js_pp_index_js from 'C:/Users/Tasha/OneDrive - Douglas College/Desktop/Documents/GitHub/GameConsoleExhibit/js/pp/index.js';
+_registerEditor(_C__Users_Tasha_OneDrive___Douglas_College_Desktop_Documents_GitHub_GameConsoleExhibit_js_pp_index_js);
