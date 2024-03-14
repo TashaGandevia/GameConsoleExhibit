@@ -16460,6 +16460,30 @@ __publicField(WasdControlsComponent, "Properties", {
   headObject: { type: Type.Object }
 });
 
+// js/button-scene.js
+var ButtonComponent = class extends Component {
+  static onRegister(engine2) {
+    engine2.registerComponent(CursorTarget);
+  }
+  start() {
+    this.target = this.object.getComponent(CursorTarget) || this.object.addComponent(CursorTarget);
+  }
+  onActivate() {
+    this.target.onUp.add(this.onUp);
+  }
+  onDeactivate() {
+    this.target.onUp.remove(this.onUp);
+  }
+  /* Called by 'cursor-target' */
+  onUp = (_, cursor) => {
+    this.engine.scene.load(this.sceneFile);
+  };
+};
+__publicField(ButtonComponent, "TypeName", "button-scene");
+__publicField(ButtonComponent, "Properties", {
+  sceneFile: Property.string("AnotherScene.bin")
+});
+
 // js/button.js
 function hapticFeedback(object, strength, duration) {
   const input = object.getComponent(InputComponent);
@@ -16469,7 +16493,7 @@ function hapticFeedback(object, strength, duration) {
       gamepad.hapticActuators[0].pulse(strength, duration);
   }
 }
-var ButtonComponent = class extends Component {
+var ButtonComponent2 = class extends Component {
   static onRegister(engine2) {
     engine2.registerComponent(HowlerAudioSource);
     engine2.registerComponent(CursorTarget);
@@ -16531,8 +16555,8 @@ var ButtonComponent = class extends Component {
     hapticFeedback(cursor.object, 0.3, 50);
   };
 };
-__publicField(ButtonComponent, "TypeName", "button");
-__publicField(ButtonComponent, "Properties", {
+__publicField(ButtonComponent2, "TypeName", "button");
+__publicField(ButtonComponent2, "Properties", {
   /** Object that has the button's mesh attached */
   buttonMeshObject: Property.object(),
   /** Material to apply when the user hovers the button */
@@ -57654,6 +57678,7 @@ engine.registerComponent(TeleportComponent);
 engine.registerComponent(VideoTexture);
 engine.registerComponent(VrModeActiveSwitch);
 engine.registerComponent(ButtonComponent);
+engine.registerComponent(ButtonComponent2);
 engine.registerComponent(GrabbableComponent);
 engine.registerComponent(GrabberHandComponent);
 engine.registerComponent(PPGatewayComponent);

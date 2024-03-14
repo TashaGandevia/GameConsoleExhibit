@@ -13,19 +13,19 @@
 
 /* wle:auto-imports:start */
 import {Cursor} from '@wonderlandengine/components';
-import {CursorTarget} from '@wonderlandengine/components';
 import {FingerCursor} from '@wonderlandengine/components';
 import {HandTracking} from '@wonderlandengine/components';
 import {HowlerAudioListener} from '@wonderlandengine/components';
 import {MouseLookComponent} from '@wonderlandengine/components';
 import {PlayerHeight} from '@wonderlandengine/components';
 import {TeleportComponent} from '@wonderlandengine/components';
-import {VideoTexture} from '@wonderlandengine/components';
 import {VrModeActiveSwitch} from '@wonderlandengine/components';
-import {ButtonComponent} from './button.js';
-import {GrabbableComponent} from './pp/index.js';
+import {BackButton} from './back-button.js';
+import {ButtonComponent} from './button-scene.js';
+import {MenuButton} from './menu-button.js';
 import {GrabberHandComponent} from './pp/index.js';
 import {PPGatewayComponent} from './pp/index.js';
+import {SettingButton} from './setting-button.js';
 /* wle:auto-imports:end */
 
 import {loadRuntime} from '@wonderlandengine/api';
@@ -33,7 +33,7 @@ import * as API from '@wonderlandengine/api'; // Deprecated: Backward compatibil
 
 /* wle:auto-constants:start */
 const Constants = {
-    ProjectName: 'VideoGameConsoleExhibit.wlp',
+    ProjectName: 'Lobby',
     RuntimeBaseName: 'WonderlandRuntime',
     WebXRRequiredFeatures: ['local',],
     WebXROptionalFeatures: ['local','local-floor','hand-tracking','hit-test',],
@@ -90,19 +90,19 @@ if (document.readyState === 'loading') {
 
 /* wle:auto-register:start */
 engine.registerComponent(Cursor);
-engine.registerComponent(CursorTarget);
 engine.registerComponent(FingerCursor);
 engine.registerComponent(HandTracking);
 engine.registerComponent(HowlerAudioListener);
 engine.registerComponent(MouseLookComponent);
 engine.registerComponent(PlayerHeight);
 engine.registerComponent(TeleportComponent);
-engine.registerComponent(VideoTexture);
 engine.registerComponent(VrModeActiveSwitch);
+engine.registerComponent(BackButton);
 engine.registerComponent(ButtonComponent);
-engine.registerComponent(GrabbableComponent);
+engine.registerComponent(MenuButton);
 engine.registerComponent(GrabberHandComponent);
 engine.registerComponent(PPGatewayComponent);
+engine.registerComponent(SettingButton);
 /* wle:auto-register:end */
 
 engine.scene.load(`${Constants.ProjectName}.bin`).catch((e) => {
